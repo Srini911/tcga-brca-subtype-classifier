@@ -1,0 +1,7 @@
+# raw + processed data (regenerate with 01_download.py / 02_preprocess.py)
+data/
+# python
+__pycache__/
+*.pyc
+# macOS
+.DS_Store

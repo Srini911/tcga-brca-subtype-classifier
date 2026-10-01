@@ -1,0 +1,215 @@
+{
+  "classes": [
+    "Basal",
+    "HER2",
+    "LumA",
+    "LumB"
+  ],
+  "n_train": 410,
+  "n_test": 103,
+  "models": {
+    "logreg": {
+      "cv_accuracy_mean": 0.8244,
+      "cv_accuracy_std": 0.0124,
+      "test_accuracy": 0.8641,
+      "test_f1_macro": 0.8667,
+      "test_roc_auc_ovr": 0.9724,
+      "per_class": {
+        "Basal": {
+          "precision": 0.95,
+          "recall": 1.0,
+          "f1-score": 0.9744
+        },
+        "HER2": {
+          "precision": 0.8333,
+          "recall": 0.8333,
+          "f1-score": 0.8333
+        },
+        "LumA": {
+          "precision": 0.8864,
+          "recall": 0.8478,
+          "f1-score": 0.8667
+        },
+        "LumB": {
+          "precision": 0.7778,
+          "recall": 0.8077,
+          "f1-score": 0.7925
+        }
+      },
+      "confusion_matrix": [
+        [
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          10,
+          0,
+          1
+        ],
+        [
+          0,
+          2,
+          39,
+          5
+        ],
+        [
+          0,
+          0,
+          5,
+          21
+        ]
+      ]
+    },
+    "random_forest": {
+      "cv_accuracy_mean": 0.822,
+      "cv_accuracy_std": 0.0183,
+      "test_accuracy": 0.8447,
+      "test_f1_macro": 0.8635,
+      "test_roc_auc_ovr": 0.9676,
+      "per_class": {
+        "Basal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0
+        },
+        "HER2": {
+          "precision": 1.0,
+          "recall": 0.8333,
+          "f1-score": 0.9091
+        },
+        "LumA": {
+          "precision": 0.7885,
+          "recall": 0.8913,
+          "f1-score": 0.8367
+        },
+        "LumB": {
+          "precision": 0.7727,
+          "recall": 0.6538,
+          "f1-score": 0.7083
+        }
+      },
+      "confusion_matrix": [
+        [
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          41,
+          5
+        ],
+        [
+          0,
+          0,
+          9,
+          17
+        ]
+      ]
+    },
+    "hist_gb": {
+      "cv_accuracy_mean": 0.8439,
+      "cv_accuracy_std": 0.0142,
+      "test_accuracy": 0.8932,
+      "test_f1_macro": 0.9075,
+      "test_roc_auc_ovr": 0.9807,
+      "per_class": {
+        "Basal": {
+          "precision": 0.95,
+          "recall": 1.0,
+          "f1-score": 0.9744
+        },
+        "HER2": {
+          "precision": 1.0,
+          "recall": 0.9167,
+          "f1-score": 0.9565
+        },
+        "LumA": {
+          "precision": 0.8913,
+          "recall": 0.8913,
+          "f1-score": 0.8913
+        },
+        "LumB": {
+          "precision": 0.8077,
+          "recall": 0.8077,
+          "f1-score": 0.8077
+        }
+      },
+      "confusion_matrix": [
+        [
+          19,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          41,
+          5
+        ],
+        [
+          0,
+          0,
+          5,
+          21
+        ]
+      ]
+    }
+  },
+  "best_model": "hist_gb",
+  "interpretation": {
+    "known_markers_in_top_genes": {
+      "logreg": [],
+      "random_forest": [
+        "ESR1",
+        "FOXA1",
+        "MLPH"
+      ],
+      "hist_gb": []
+    },
+    "per_class_recall": {
+      "Basal": 1.0,
+      "HER2": 0.917,
+      "LumA": 0.891,
+      "LumB": 0.808
+    },
+    "notable_confusions": [
+      {
+        "true": "LumB",
+        "predicted_as": "LumA",
+        "fraction": 0.192,
+        "n": 5
+      },
+      {
+        "true": "LumA",
+        "predicted_as": "LumB",
+        "fraction": 0.109,
+        "n": 5
+      },
+      {
+        "true": "HER2",
+        "predicted_as": "Basal",
+        "fraction": 0.083,
+        "n": 1
+      }
+    ]
+  }
+}
